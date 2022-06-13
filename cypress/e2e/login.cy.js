@@ -1,5 +1,5 @@
 
-const locators = require('../../cypress/fixtures/locators.json')
+const locators = require('../fixtures/locators.json')
 describe('login test', () => {
   beforeEach(() => {
     cy.visit('https://gallery-app.vivifyideas.com')

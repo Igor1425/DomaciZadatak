@@ -1,31 +1,47 @@
-class CreateGallerie{
-    get GallerieTitle(){
+class CreateGallerie {
+    get gallerieTitle() {
         return cy.get('h1').contains('Create Gallery')
     }
-    get TitleINput(){
+
+    get titleINput() {
         return cy.get('input[id="title"]')
     }
-    get Description(){
+
+    get description() {
         return cy.get('#description')
     }
-    get ImageUrlInput(){
+
+    get imageUrlInput() {
         return cy.get('input[placeholder*="image url"]')
     }
-    get UpBtn(){
-        return cy.get('button[class="fas fa-chevron-circle-up"]')
+
+    get galleryInputParent() {
+        return cy.get(".form-group");
     }
-    get DownBtn(){
-        return cy.get('button[class="fas fa-chevron-circle-down"]')
+
+    get upBtn() {
+        return this.galleryInputParent.find("button").eq(1)
     }
-    get AddImage(){
+
+    get downBtn() {
+        return this.galleryInputParent.find("button").eq(2)
+    }
+
+    get addImage() {
         return cy.get('button').contains('Add image')
     }
-    get SubmitBtn(){
+
+    get submitBtn() {
         return cy.get('button').contains('Submit')
     }
-    get CancelBtn(){
+
+    get cancelBtn() {
         return cy.get('button').contains('Cancel')
     }
-    
+
+    get errMsg() {
+        return cy.get('p[class="alert alert-danger"]')
+    }
 }
+
 export const createGallerie = new CreateGallerie()

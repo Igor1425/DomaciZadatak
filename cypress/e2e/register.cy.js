@@ -1,13 +1,12 @@
 
 const faker = require('@faker-js/faker');
 
-const podatci = {
+const podaci = {
 
     firstName : faker.name.firstName(),
     lastName : faker.name.lastName(),
     email : faker.internet.email(),
     password :faker.internet.password()
-    
     
     }
 
@@ -34,8 +33,8 @@ describe('register test', ()=>{
         cy.get('#first-name').type(faker.name.firstName())
         cy.get('#last-name').type(faker.name.lastName())
         cy.get('#email').type('obrenovicigor+po14.25gmail.com')
-        cy.get('#password').type(podatci.password)
-        cy.get('#password-confirmation').type(podatci.password)
+        cy.get('#password').type(podaci.password)
+        cy.get('#password-confirmation').type(podaci.password)
         cy.get('[type="checkbox"]').check()
         cy.get('[type="submit"]').click()
         cy.url().should('include','/register')
@@ -45,8 +44,8 @@ it('email without .com', ()=>{
     cy.get('#first-name').type(faker.name.firstName())
     cy.get('#last-name').type(faker.name.lastName())
     cy.get('#email').type('obrenovicigor14.25@gmail')
-    cy.get('#password').type(podatci.password)
-    cy.get('#password-confirmation').type(podatci.password)
+    cy.get('#password').type(podaci.password)
+    cy.get('#password-confirmation').type(podaci.password)
     cy.get('[type="checkbox"]').check()
     cy.get('[type = "submit"]').click()
     cy.url().should('include','/register')
@@ -57,8 +56,8 @@ it('empty first name', ()=>{
     cy.get('#first-name').type('   ')
     cy.get('#last-name').type(faker.name.lastName())
     cy.get('#email').type(faker.internet.email())
-    cy.get('#password').type(podatci.password)
-    cy.get('#password-confirmation').type(podatci.password)
+    cy.get('#password').type(podaci.password)
+    cy.get('#password-confirmation').type(podaci.password)
     cy.get('[type="checkbox"]').check()
     cy.get('[type="submit"]').click()
     cy.url().should('include', '/register')
@@ -71,8 +70,8 @@ it('empty last name', ()=>{
     cy.get('#first-name').type(faker.name.firstName())
     cy.get('#last-name').type('   ')
     cy.get('#email').type(faker.internet.email())
-    cy.get('#password').type(podatci.password)
-    cy.get('#password-confirmation').type(podatci.password)
+    cy.get('#password').type(podaci.password)
+    cy.get('#password-confirmation').type(podaci.password)
     cy.get('[type="checkbox"]').check()
     cy.get('[type="submit"]').click()
     cy.url().should('include', '/register')
@@ -91,8 +90,8 @@ it('register without checking tearms&conditiones', ()=>{
     cy.get('#first-name').type(faker.name.firstName())
     cy.get('#last-name').type(faker.name.lastName())
     cy.get('#email').type(faker.internet.email())
-    cy.get('#password').type(podatci.password)
-    cy.get('#password-confirmation').type(podatci.password)
+    cy.get('#password').type(podaci.password)
+    cy.get('#password-confirmation').type(podaci.password)
     cy.get('[type="submit"]').click()
     cy.url().should('include','/register')
 })
@@ -100,8 +99,8 @@ it('succsessful register', () => {
     cy.get('#first-name').type(faker.name.firstName())
     cy.get('#last-name').type(faker.name.lastName())
     cy.get('#email').type(faker.internet.email())
-    cy.get('#password').type(podatci.password)
-    cy.get('#password-confirmation').type(podatci.password)
+    cy.get('#password').type(podaci.password)
+    cy.get('#password-confirmation').type(podaci.password)
     cy.get('[type="checkbox"]').check()
     cy.get('[type="submit"]').click()
     cy.url().should('include','/register')

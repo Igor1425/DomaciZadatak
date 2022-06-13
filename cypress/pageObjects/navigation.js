@@ -1,28 +1,28 @@
 class Navigation {
-   
-    get AllgalleriesLink(){
+    get allGalleriesLink(){
        return cy.get('a[class="navbar-brand router-link-active"]')
     }
-    get MygalleriesLink(){
+    get myGalleriesLink(){
         return cy.get('a[href="/my-galleries"]')
     }
-    get CreategallerieLink(){
+    get createGallerieLink(){
         return cy.get('a[href="/create"]')
     }
-    get LogoutBtn (){
+    get logoutBtn (){
         return cy.get(".ml-auto > :nth-child(3) > .nav-link")
     }
-   clickAllgalleriesLink(){
-       this.AllgalleriesLink.click()
+   clickAllGalleriesLink(){
+       this.allGalleriesLink().click
    }
-   clickMygalleriesLink(){
-       this.MygalleriesLink().click
+   clickMyGalleriesLink(){
+       this.myGalleriesLink().click
    }
-   clickCreategallerieLink(){
-       this.CreategallerieLink().click
+   clickCreateGallerieLink(){
+       this.createGallerieLink().click
    }
    clickLogutBtn(){
-       this.LogoutBtn().click
+       this.logoutBtn().click
    }
+
 }
 export const navigation = new Navigation()
